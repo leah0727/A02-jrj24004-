@@ -1,6 +1,5 @@
 # A02-jrj24004-
-our live attempt to do the ping pong assignment
-
+#0515_2328
 # A02 — California Housing Regression with MLPRegressor
 
 This project trains a neural network regression model using the California Housing dataset from `scikit-learn`.
