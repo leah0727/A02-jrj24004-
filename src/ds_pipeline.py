@@ -65,3 +65,34 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 
+
+##PR2. 
+
+# 4. Train MLPRegressor
+# Includes early_stopping=True and custom hyperparameters
+mlp = MLPRegressor(
+    random_state=42,
+    hidden_layer_sizes=(10, 5),
+    alpha=0.001,
+    learning_rate_init=0.001,
+    max_iter=300,
+    batch_size=1000,
+    activation="relu",
+    validation_fraction=0.2,
+    early_stopping=True
+)
+
+mlp.fit(X_train_scaled, y_train)
+
+
+# 5. Predictions
+y_train_pred = mlp.predict(X_train_scaled)
+y_test_pred = mlp.predict(X_test_scaled)
+
+
+# 6. Evaluation
+print("Train R2:", r2_score(y_train, y_train_pred))
+print("Train MAE:", mean_absolute_error(y_train, y_train_pred))
+
+print("Test R2:", r2_score(y_test, y_test_pred))
+print("Test MAE:", mean_absolute_error(y_test, y_test_pred))
