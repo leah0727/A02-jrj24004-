@@ -96,3 +96,29 @@ print("Train MAE:", mean_absolute_error(y_train, y_train_pred))
 
 print("Test R2:", r2_score(y_test, y_test_pred))
 print("Test MAE:", mean_absolute_error(y_test, y_test_pred))
+
+##PR3.
+# 7. Actual vs Predicted — Train
+plt.figure(figsize=(6, 6))
+plt.scatter(y_train, y_train_pred, alpha=0.4)
+plt.plot([y_train.min(), y_train.max()], [y_train.min(), y_train.max()], linestyle="--")
+plt.xlabel("Actual Values")
+plt.ylabel("Predicted Values")
+plt.title("Actual vs Predicted — Train")
+plt.grid(True)
+plt.tight_layout()
+plt.savefig("figures/train_actual_vs_pred.png", dpi=300)
+plt.show()
+
+
+# 8. Actual vs Predicted — Test
+plt.figure(figsize=(6, 6))
+plt.scatter(y_test, y_test_pred, alpha=0.4)
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], linestyle="--")
+plt.xlabel("Actual Values")
+plt.ylabel("Predicted Values")
+plt.title("Actual vs Predicted — Test")
+plt.grid(True)
+plt.tight_layout()
+plt.savefig("figures/test_actual_vs_pred.png", dpi=300)
+plt.show()
